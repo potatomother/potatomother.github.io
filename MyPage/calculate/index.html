@@ -1,384 +1,190 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-  <title>page.title - Hexo</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
-    
-  
-
-  
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-
-<body>
-  <header style="height: 60vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>pottomother(李煜)</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="page.title">
-              
-            </span>
-
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<article class="page-content">
-  <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title></title>
+		<style>
+			body{
+			  display:flex;
+			  justify-content:center;
+			  align-items:center;
+			  min-height:100vh;
+			  background-color:#eee;
+			  
+			}
+			.calculator{
+			  --button-width:80px;
+			  --button-height:80px;
+			  display:grid;
+			  grid-template-areas:"result result result result"
+			    "ac plus-minus percent divide"
+			    "number-7 number-8 number-9 multiply"
+			    "number-4 number-5 number-6 subtract"
+			    "number-1 number-2 number-3 add"
+			    "number-0 number-0 dot equal";
+			  grid-template-columns:repeat(4,var(--button-width));
+			  grid-template-rows:repeat(6,var(--button-height));
+			  
+			  box-shadow:-8px -8px 16px -10px rgba(2555,255,255,1), 8px 8px 16px -10px rgba(0,0,0,.15);
+			  padding:20px;
+			  border-radius:20px;
+			}
+			.calculator button {
+			  margin:8px;
+			  padding:0;
+			  border:0;
+			  display:block;
+			  outline:none;
+			  border-radius:calc(var(--button-height)/2);
+			  font-size:24px;
+			  font-family:Helvetica;
+			  font-weight:normal;
+			  color:#999;
+			  background:linear-gradient(135deg,rgba(230,230,230,1) 0%, rgba(246,246,246,1)100%);
+			  box-shadow:-4px -4px 10px -8px rgba(255,255,255,1),4px 4px 10px -8px rgba(0,0,0,.3);
+			}
+			.calculator button:active{
+			  box-shadow:-4px -4px 10px -8px rgba(255,255,255,1),4px 4px 10px -8px rgba(0,0,0,.3) inset ;
+			}
+			.result{
+			  text-align:right;
+			  line-height:var(--button-height);
+			  font-size:48px;
+			  font-family:Helvetica;
+			  padding:0 20px;
+			  color:#666;
+			  overflow: hidden;
+			  white-space: nowrap;
+			}
+			.result .display {
+				position: relative;
+				float:right;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="calculator" id="app">
+		<div class="calculator" >
 		  <div class="result" style="grid-area:result">
-		    <div class="display">
-		    	
+		    <div class="display" id="ans">
+		    	0
 		    </div>
 		  </div>
-		  <button style="grid-area:ac" @click="clear">AC</button>
-		  <button style="grid-area:plus-minus" @click="calculateToggle">+/-</button>
-		  <button style="grid-area:percent" @click="calculatePercentage">%</button>
-		  <button style="grid-area:add" @click="append('×')">×</button>
-		  <button style="grid-area:subtract" @click="append('÷')">÷</button>
-		  <button style="grid-area:multiply" @click="append('+')">+</button>
-		  <button style="grid-area:divide" @click="append('-')">-</button>
-		  <button style="grid-area:equal" @click="calculate">=</button>
-		  
-		  <button style="grid-area:number-1" @click="append(1)">1</button>
-		  <button style="grid-area:number-2" @click="append(2)">2</button>
-		  <button style="grid-area:number-3" @click="append(3)">3</button>
-		  <button style="grid-area:number-4" @click="append(4)">4</button>
-		  <button style="grid-area:number-5" @click="append(5)">5</button>
-		  <button style="grid-area:number-6" @click="append(6)">6</button>
-		  <button style="grid-area:number-7" @click="append(7)">7</button>
-		  <button style="grid-area:number-8" @click="append(8)">8</button>
-		  <button style="grid-area:number-9" @click="append(9)">9</button>
-		  <button style="grid-area:number-0" @click="append(0)">0</button>
-		 
-		 <button style="grid-area:dot" @click="append('.')">.</button>
-		 
+		  <button style="grid-area:ac" onclick="Clear()">AC</button>
+		  <button style="grid-area:plus-minus" onclick="calculateToggle()">+/-</button>
+		  <button style="grid-area:percent" onclick="calculatePercentage()">%</button>
+		  <button style="grid-area:add" onclick="append('×')">×</button>
+		  <button style="grid-area:subtract" onclick="append('÷')">÷</button>
+		  <button style="grid-area:multiply" onclick="append('+')">+</button>
+		  <button style="grid-area:divide" onclick="append('-')">-</button>
+		  <button style="grid-area:equal" onclick="calculate()">=</button>
+		  <button style="grid-area:number-1" onclick="append(1)">1</button>
+		  <button style="grid-area:number-2" onclick="append(2)">2</button>
+		  <button style="grid-area:number-3" onclick="append(3)">3</button>
+		  <button style="grid-area:number-4" onclick="append(4)">4</button>
+		  <button style="grid-area:number-5" onclick="append(5)">5</button>
+		  <button style="grid-area:number-6" onclick="append(6)">6</button>
+		  <button style="grid-area:number-7" onclick="append(7)">7</button>
+		  <button style="grid-area:number-8" onclick="append(8)">8</button>
+		  <button style="grid-area:number-9" onclick="append(9)">9</button>
+		  <button style="grid-area:number-0" onclick="append(0)">0</button>
+		 <button style="grid-area:dot" onclick="append('.')">.</button>
 		</div>
 	</body>
 	<script type="text/javascript">
-
+		let equation="0",
+		isDecimalAdded=false,//判断是否输入小数点
+		isOperatorAdded=false,//判断是否点击加减乘除
+		isStarted=false;//判断计算器是否已经开始输入数字
+		//计算结果写到html中
+		function outputResult(ans){
+			document.getElementById("ans").innerHTML=ans;
+		}
+		function isOperator(character){
+			return['+','-','×','÷'].indexOf(character)>-1
+		}
+		function append(character){
+			//计算机开始输入之前，保证数字是0
+		  if(isStarted==false && !isOperator(character)&&character!=="."){
+			  equation="0";
+		  }
+		  if(isStarted==false && isOperator(character)){
+			  isStarted=true;
+		  }
+		  //第一个输入
+		  if(isStarted===false && !isOperator(character)){
+			  if(character==="."){
+				  equation+=''+ character;
+				  outputResult(equation);
+				  isDecimalAdded=true;
+			  }else{
+				  equation =''+ character;
+				  outputResult(equation);
+			  }
+			  isStarted=true;
+			  return
+		  }
+		  //输入加减乘除以外的输入
+		  if(!isOperator(character)){
+			  if(character==="." && isDecimalAdded){
+				return
+			  }
+			  if(character==="."){
+				  isDecimalAdded=true;
+				  isOperatorAdded=true;
+			  }else{
+				  isOperatorAdded=false;
+			  }
+			  equation+=''+ character;
+			  outputResult(equation);
+		  }
+		  //点击加减乘除
+		  if(isOperator(character) && !isOperatorAdded){
+			  equation+=''+character
+			  outputResult(equation)
+			  isDecimalAdded=false
+			  isOperatorAdded=true
+		
+		  }
+		}
+			// When pressed '='
+		function calculate(){
+			let result = equation
+				.replace(new RegExp("×", "g"), "*")
+				.replace(new RegExp("÷", "g"), "/")
+			let ans = eval(result)
+			equation = (ans < 1.0e9 ? parseFloat(ans.toFixed(9)):ans.toExponential(3)).toString()
+			isDecimalAdded = false
+			isOperatorAdded = false
+			isStarted=false
+			outputResult(equation)
+		}
+			// When pressed '+/-'
+		function calculateToggle(){
+			      if(isOperatorAdded||!isStarted){
+					  return
+				  }
+				  equation=equation+'* -1'
+				  calculate()
+				  outputResult(equation)
+		}
+			// When pressed '%'
+		function calculatePercentage(){
+			      if(isOperatorAdded||!isStarted){
+					  return
+			      }
+			      equation=equation+'* 0.01'
+			      calculate()
+				  outputResult(equation)
+		}
+				// When pressed 'AC'
+		function Clear(){
+		  equation="0"
+		  outputResult(equation)
+		  isDecimalAdded=false
+		  isOperatorAdded=false
+		  isStarted=false
+		}
 	</script>
-	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
-	<script src="calculate_vue.js" type="text/javascript" charset="utf-8"></script>
-</html>
-
-
-  
-</article>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-
-    
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
-  
-
-  
-
-  
-</footer>
-
-
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
-
-
-</body>
+	<script src="calculate.js" type="text/javascript" charset="utf-8"></script>
 </html>
