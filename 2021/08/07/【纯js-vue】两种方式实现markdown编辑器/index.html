@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      581 字
+      827 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      14
        分钟
     </span>
   
@@ -243,10 +243,16 @@
 
 
 
+<h2 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h2><h3 id="1-代码没有高亮"><a href="#1-代码没有高亮" class="headerlink" title="1.代码没有高亮"></a>1.代码没有高亮</h3><p>纯js实现中使用官网的方法引用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
+<h3 id="2-代码块没有背景"><a href="#2-代码块没有背景" class="headerlink" title="2.代码块没有背景"></a>2.代码块没有背景</h3><p>翻阅了一些资料，给出一个可以用的方法</p>
+<p>highlight.js 会给代码块标记上hljs 类，进行处理，但是我这里他并没有自动标记<code>&lt;pre&gt;</code>标签中的class，所以使用字符串替换的方式，进行标注，代码块背景就可以显示了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">marked(input,&#123;<br>		    <span class="hljs-function"><span class="hljs-title">highlight</span>(<span class="hljs-params">code</span>)</span>&#123;<br>		      <span class="hljs-keyword">return</span> hljs.highlightAuto(code).value;<br>		    &#125;<br>		  &#125;).replace(<span class="hljs-regexp">/&lt;pre&gt;/g</span>, <span class="hljs-string">&quot;&lt;pre class=&#x27;hljs&#x27;&gt;&quot;</span>)<br></code></pre></td></tr></table></figure>
 
-
-
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>marked.js用于处理      marked文本到页面html的转义</p>
+<p>highlight.js用于处理    代码块的高亮问题</p>
+<h3 id="4-小问题"><a href="#4-小问题" class="headerlink" title="4.小问题"></a>4.小问题</h3><p>会有xss的危险，marked.js被没有相关处理，需要增加这个功能。</p>
 
             </div>
             <hr>
