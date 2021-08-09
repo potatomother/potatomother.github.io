@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>百变小樱一——相关API介绍 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>pottomother(李煜)</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="百变小樱一——相关API介绍">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-09 18:42" pubdate>
+        2021年8月9日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      18
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">百变小樱一——相关API介绍</h1>
+            
+            <div class="markdown-body">
+              <h1 id="百变小樱一——相关API介绍"><a href="#百变小樱一——相关API介绍" class="headerlink" title="百变小樱一——相关API介绍"></a>百变小樱一——相关API介绍</h1><h2 id="Windows-API"><a href="#Windows-API" class="headerlink" title="Windows API"></a>Windows API</h2><h3 id="window-scroll-X-Y-："><a href="#window-scroll-X-Y-：" class="headerlink" title="window.scroll(X,Y)："></a>window.scroll(X,Y)：</h3><p>X代表着X轴滚动多少px，Y代表着Y轴滚动多少</p>
+<h3 id="window-pageYOffset："><a href="#window-pageYOffset：" class="headerlink" title="window.pageYOffset："></a>window.pageYOffset：</h3><p>返回文档在垂直方向已滚动的像素值。</p>
+<h3 id="window-innerWidth"><a href="#window-innerWidth" class="headerlink" title="window.innerWidth"></a>window.innerWidth</h3><p>只读的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window"><code>Window</code></a> 属性 <code>**innerWidth**</code> 返回以像素为单位的窗口的内部宽度。如果垂直滚动条存在，则这个属性将包括它的宽度</p>
+<h3 id="document-body-style-width"><a href="#document-body-style-width" class="headerlink" title="document.body.style.width"></a>document.body.style.width</h3><p>body标签的宽度</p>
+<h2 id="D3-API"><a href="#D3-API" class="headerlink" title="D3 API"></a>D3 API</h2><h3 id="selection-node"><a href="#selection-node" class="headerlink" title="selection.node"></a><a target="_blank" rel="noopener" href="https://d3-wiki.readthedocs.io/zh_CN/master/%E9%80%89%E6%8B%A9%E5%99%A8#node">selection.node</a></h3><p>返回选择中的第一个节点。</p>
+<h3 id="d3-queue"><a href="#d3-queue" class="headerlink" title="d3.queue()"></a>d3.queue()</h3><p>函数用于创建指定大小的队列。</p>
+<h3 id="d3-queue-defer-task-arguments…"><a href="#d3-queue-defer-task-arguments…" class="headerlink" title="d3.queue.defer(task[, arguments…])"></a>d3.queue.defer(task[, arguments…])</h3><p>**task:**这是要执行以执行特定任务的功能。</p>
+<h3 id="d3-queue-await-error-…"><a href="#d3-queue-await-error-…" class="headerlink" title="d3.queue.await(error,…)"></a>d3.queue.await(error,…)</h3><p>执行完所有的task之后执行的回调函数，第一个参数是error，后面是任务（task）的结果</p>
+<h3 id="d3-json"><a href="#d3-json" class="headerlink" title="d3.json"></a><a target="_blank" rel="noopener" href="https://d3-wiki.readthedocs.io/zh_CN/master/%E8%AF%B7%E6%B1%82#d3_json">d3.json</a></h3><p>请求一个JSON对象。</p>
+<h3 id="d3-stratify"><a href="#d3-stratify" class="headerlink" title="d3.stratify()"></a>d3.stratify()</h3><p>转为层次结构数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> root = d3.stratify()<br>    .id(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>&#123; <span class="hljs-keyword">return</span> d.name; &#125;)<br>    .parentId(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>&#123; <span class="hljs-keyword">return</span> d.parent; &#125;)<br>    (table);<br></code></pre></td></tr></table></figure>
+
+<h3 id="d3-cluster-lt-源码-gt-opens-new-window"><a href="#d3-cluster-lt-源码-gt-opens-new-window" class="headerlink" title="#d3.cluster() &lt;源码&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-hierarchy/#cluster">#</a>d3.<strong>cluster</strong>() <a target="_blank" rel="noopener" href="https://github.com/d3/d3-hierarchy/blob/master/src/cluster.js">&lt;源码&gt;(opens new window)</a></h3><p>使用默认的配置创建一个新的系统树布局</p>
+<p>如果要生成一个 <a target="_blank" rel="noopener" href="http://bl.ocks.org/mbostock/4739610f6d96aaad2fb1e78a72b385ab">radial layout(径向布局) (opens new window)</a>则可以将其设置为 [360, <em>radius</em>] 用以表示角度范围为 <code>360°</code> 并且半径为 <em>radius</em>。</p>
+<h3 id="cluster-separation-separation-lt-源码-gt-opens-new-window"><a href="#cluster-separation-separation-lt-源码-gt-opens-new-window" class="headerlink" title="cluster.separation([separation]) &lt;源码&gt;(opens new window)"></a><em>cluster</em>.<strong>separation</strong>([<em>separation</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-hierarchy/blob/master/src/cluster.js#L71">&lt;源码&gt;(opens new window)</a></h3><p>如果指定了 <em>seperation</em>, 则设置间隔访问器为指定的函数并返回当前系统树布局。</p>
+<h3 id="node-leaves-lt-源码-gt-opens-new-window"><a href="#node-leaves-lt-源码-gt-opens-new-window" class="headerlink" title="# node.leaves() &lt;源码&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-hierarchy/#node_leaves">#</a> <em>node</em>.<strong>leaves</strong>() <a target="_blank" rel="noopener" href="https://github.com/d3/d3-hierarchy/blob/master/src/hierarchy/leaves.js">&lt;源码&gt;(opens new window)</a></h3><p>返回叶节点数组，叶节点是没有孩子节点的节点。</p>
+<h3 id="d3-forceSimulation-nodes-lt-gt-opens-new-window"><a href="#d3-forceSimulation-nodes-lt-gt-opens-new-window" class="headerlink" title="# d3.forceSimulation([nodes]) &lt;&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#forceSimulation">#</a> d3.<strong>forceSimulation</strong>([<em>nodes</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-force/blob/master/src/simulation.js">&lt;&gt;(opens new window)</a></h3><p>使用指定的 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_nodes"><em>nodes</em></a> 创建一个新的没有任何 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_force">forces(力模型)</a> 的仿真。如果没有指定 <em>nodes</em> 则默认为空数组。仿真会自动 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_restart">starts(启动)</a>；使用 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_on"><em>simulation</em>.on</a> 来监听仿真运行过程中的 <code>tick</code> 事件。如果你想手动运行仿真，则需要调用 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_stop"><em>simulation</em>.stop</a> 然后根据需求调用 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_tick"><em>simulation</em>.tick</a>。</p>
+<h3 id="simulation-force-name-force-lt-gt-opens-new-window"><a href="#simulation-force-name-force-lt-gt-opens-new-window" class="headerlink" title="# simulation.force(name[, force]) &lt;&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_force">#</a> <em>simulation</em>.<strong>force</strong>(<em>name</em>[, <em>force</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-force/blob/master/src/simulation.js#L112">&lt;&gt;(opens new window)</a></h3><p>如果指定了 <em>force</em> 则表示为仿真添加指定 <em>name</em> 的 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#forces">力模型</a> 并返回仿真。如果没有指定 <em>force</em> 则返回当前仿真的对应 <em>name</em> 的力模型，如果没有对应的 <em>name</em> 则返回 <code>undefined</code>。 (默认情况下仿真没有任何力模型，需要手动添加)。例如创建一个用来对图进行布局的仿真，可以如下</p>
+<h3 id="d3-forceX-x-lt-gt-opens-new-window"><a href="#d3-forceX-x-lt-gt-opens-new-window" class="headerlink" title="# d3.forceX([x]) &lt;&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#forceX">#</a> d3.<strong>forceX</strong>([<em>x</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-force/blob/master/src/x.js">&lt;&gt;(opens new window)</a></h3><p>根据指定的 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#x_x"><em>x</em></a> 创建一个沿着 <em>x</em>-轴 方向的新的定位力模型。如果 <em>x</em> 没有指定则默认为 0.</p>
+<h3 id="x-strength-strength-lt-gt-opens-new-window"><a href="#x-strength-strength-lt-gt-opens-new-window" class="headerlink" title="# x.strength([strength]) &lt;&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#x_strength">#</a> <em>x</em>.<strong>strength</strong>([<em>strength</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-force/blob/master/src/x.js#L32">&lt;&gt;(opens new window)</a></h3><p>如果指定了 <em>strength</em> 则将强度访问器设置为指定的数值或者方法，强度访问器会为每个节点进行调用，并返回当前力模型。<em>strength</em> 决定了节点 <em>x</em>-速度的增量: (<a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#x_x"><em>x</em></a> - <em>node</em>.x) × <em>strength</em>. 例如值为 0.1 时表示节点在每次应用时应该从当前 <em>x</em>-位置向目标 <em>x</em>-位置移动十分之一。值越大则移动的越快，但是会牺牲其他力模型或者约束。不建议使用 [0, 1] 之外的值。</p>
+<h3 id="d3-forceCollide-radius-lt-gt-opens-new-window"><a href="#d3-forceCollide-radius-lt-gt-opens-new-window" class="headerlink" title="# d3.forceCollide([radius]) &lt;&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#forceCollide">#</a> d3.<strong>forceCollide</strong>([<em>radius</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-force/blob/master/src/collide.js">&lt;&gt;(opens new window)</a></h3><p>根据指定的 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#collide_radius"><em>radius</em></a> 创建一个新的圆形区域的碰撞检测。如果没有指定 <em>radius</em> 则默认所有的节点半径都为 1.</p>
+<h3 id="simulation-on-typenames-listener-lt-gt-opens-new-window"><a href="#simulation-on-typenames-listener-lt-gt-opens-new-window" class="headerlink" title="# simulation.on(typenames, [listener]) &lt;&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_on">#</a> <em>simulation</em>.<strong>on</strong>(<em>typenames</em>, [<em>listener</em>]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-force/blob/master/src/simulation.js#L139">&lt;&gt;(opens new window)</a></h3><p>如果指定了 <em>listener</em> 则将其指定的 <em>typenames</em> 的回调。如果对应的 <em>typenames</em> 已经存在事件监听器，则将其替换。如果 <em>listener</em> 为 <code>null</code> 则表示移除对应 <em>typenames</em> 的事件监听器。如果没有指定 <em>listener</em> 则返回第一个符合条件的 <em>typenames</em> 对应的事件监听器，当指定的事件触发时，每个回调都会被调用，回调中 <code>this</code> 指向仿真本身。</p>
+<p><em>typenames</em> 可以由多个由空格隔开的 <em>typename</em>。每个 <em>typename</em> 都由 <em>type</em> 和可选的 <em>name</em> 组成，用 (<code>.</code>) 连接。比如 <code>tick.foo</code> 和 <code>tick.bar</code>。也就是可以为同一种事件类型注册多个事件监听器。其中 <em>type</em> 必须为以下几种:</p>
+<ul>
+<li><code>tick</code> - 仿真内部定时器每次 <code>tick</code> 之后。</li>
+<li><code>end</code> - 当 <em>alpha</em> &lt; <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-force/#simulation_alphaMin"><em>alphaMin</em></a> 时仿真内部定时器停止。</li>
+</ul>
+<h3 id="d3-timer-callback-delay-time-lt-gt-opens-new-window"><a href="#d3-timer-callback-delay-time-lt-gt-opens-new-window" class="headerlink" title="d3.timer(callback[, delay[, time]]) &lt;&gt;(opens new window)"></a>d3.<strong>timer</strong>(<em>callback</em>[, <em>delay</em>[, <em>time</em>]]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-timer/blob/master/src/timer.js#L52">&lt;&gt;(opens new window)</a></h3><p>定义一个新的定时器，然后重复执行指定的 <em>callback</em> 直到定时器被 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-timer/#timer_stop">stopped</a>。可选的数值类型 <em>delay</em> 单位为毫秒可以用来指定调用 <em>callback</em> 的延迟时间，如果没有指定 <em>delay</em> 则默认为 0。延迟时间相对于指定的 <em>time</em> (ms)，如果没有指定 <em>time</em> 则默认为 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-timer/#now">now</a>.</p>
+<p><em>callback</em> 参数为 <em>elapsed</em> 以表示自从定时器被激活后过去的时间(表面上的)。例如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> t = d3.timer(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">elapsed</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(elapsed);<br>  <span class="hljs-keyword">if</span> (elapsed &gt; <span class="hljs-number">200</span>) t.stop();<br>&#125;, <span class="hljs-number">150</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="Canvas-API"><a href="#Canvas-API" class="headerlink" title="Canvas API"></a>Canvas API</h2><h3 id="getContext"><a href="#getContext" class="headerlink" title="getContext"></a>getContext</h3><p>canvas.getContext(‘2d’); </p>
+<p><code>canvas.getContext(&#39;2d&#39;)</code>方法让我们拿到一个<code>CanvasRenderingContext2D</code>对象，所有的绘图操作都需要通过这个对象完成。</p>
+<p>如果需要绘制3D怎么办？HTML5还有一个WebGL规范，允许在Canvas中绘制3D图形：<code> canvas.getContext(&quot;webgl&quot;);</code></p>
+<h3 id="CanvasRenderingContext2D-globalCompositeOperation"><a href="#CanvasRenderingContext2D-globalCompositeOperation" class="headerlink" title="CanvasRenderingContext2D.globalCompositeOperation"></a>CanvasRenderingContext2D.globalCompositeOperation</h3><p>绘制新形状时应用的合成操作的类型，将顶层像素与底层相应像素相乘，结果是一幅更黑暗的图片</p>
+<p><img src="C:\Users\liyu\AppData\Roaming\Typora\typora-user-images\image-20210808153439384.png" srcset="/img/loading.gif" lazyload alt="image-20210808153439384"></p>
+<h3 id="CanvasRenderingContext2D-lineCap"><a href="#CanvasRenderingContext2D-lineCap" class="headerlink" title="CanvasRenderingContext2D.lineCap"></a>CanvasRenderingContext2D.lineCap</h3><p>是 Canvas 2D API 指定如何绘制每一条线段末端的属性。有3个可能的值，分别是：<code>butt</code>, <code>round</code> and <code>square</code>。默认值是 `butt。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">ctx.lineCap</span> = <span class="hljs-string">&quot;round&quot;</span><span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>round</code>线段末端以圆形结束。</p>
+<h3 id="CanvasRenderingContext2D-lineWidth"><a href="#CanvasRenderingContext2D-lineWidth" class="headerlink" title="CanvasRenderingContext2D.lineWidth"></a>CanvasRenderingContext2D.lineWidth</h3><p>是 Canvas 2D API 设置线段厚度的属性（即线段的宽度）。</p>
+<h2 id="SVG-API"><a href="#SVG-API" class="headerlink" title="SVG API"></a>SVG API</h2><h3 id="lt-pattern-gt-元素"><a href="#lt-pattern-gt-元素" class="headerlink" title="&lt;pattern&gt;元素"></a><code>&lt;pattern&gt;</code>元素</h3><p>SVG使用<code>&lt;pattern&gt;</code>元素来定义模式。 用于以平铺方式填充图形元素。</p>
+<p>​    属性：<code>patternUnits</code></p>
+<p>​    用来定义图案效果区域的单位。 它为模式内的各种长度值以及定义模式子区域的属性指定坐标系。 如果<code>patternUnits =“userSpaceOnUse”</code>，则值表示使用<code>&#39;pattern&#39;</code>元素时当前用户坐标系中的值。 如果<code>patternUnits =“objectBoundingBox”</code>，则值表示在使用<code>&#39;pattern&#39;</code>元素时就地引用元素上的边界框的分数或百分比的值。 默认是<code>userSpaceOnUse</code>。//原文出自【易百教程】，商业转载请联系作者获得授权，非商业转载请保留原文链接：<a target="_blank" rel="noopener" href="https://www.yiibai.com/svg/svg_patterns.html">https://www.yiibai.com/svg/svg_patterns.html</a> </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/D3/">D3</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/09/%E7%99%BE%E5%8F%98%E5%B0%8F%E6%A8%B1%E4%BA%8C%E2%80%94%E2%80%94%E4%BB%A3%E7%A0%81%E6%8B%86%E8%A7%A3%E5%AE%9E%E7%8E%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">百变小樱二——代码拆解实现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/08/%E3%80%90vue%E3%80%91%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%E8%99%9A%E6%8B%9Fdom/">
+                        <span class="hidden-mobile">【vue】源码剖析虚拟dom</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
