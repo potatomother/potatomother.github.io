@@ -229,7 +229,7 @@
             
             <div class="markdown-body">
               <h1 id="百变小樱二——代码拆解实现"><a href="#百变小樱二——代码拆解实现" class="headerlink" title="百变小樱二——代码拆解实现"></a>百变小樱二——代码拆解实现</h1><h4 id="看我！-点我查看项目演示"><a href="#看我！-点我查看项目演示" class="headerlink" title="看我！~点我查看项目演示"></a><a target="_blank" rel="noopener" href="https://potatomother.github.io/MyPage/cardcaptorsakura-gh-pages/">看我！~点我查看项目演示</a></h4><p>先放一张完整的效果图</p>
-<p><img src="C:\Users\liyu\AppData\Roaming\Typora\typora-user-images\image-20210809112434753.png" srcset="/img/loading.gif" lazyload alt="image-20210809112434753"></p>
+<p><img src="1.png" srcset="/img/loading.gif" lazyload alt="image-20210809112434753"></p>
 <p>接着我们一步一步拆解代码进行实现</p>
 <h2 id="1-读入数据"><a href="#1-读入数据" class="headerlink" title="1.读入数据"></a>1.读入数据</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript">d3.queue() <span class="hljs-comment">//queue队列  defer任务  await执行完成之后调用函数</span><br>    .defer(d3.json,<span class="hljs-string">&quot;../data/ccs_chapter_hierarchy.json&quot;</span>)<br>    .defer(d3.json, <span class="hljs-string">&quot;../data/ccs_chapter_total.json&quot;</span>)<br>    .defer(d3.json,<span class="hljs-string">&quot;../data/ccs_character_per_chapter.json&quot;</span>)<br>    .defer(d3.json,<span class="hljs-string">&quot;../data/ccs_character_per_chapter_cover.json&quot;</span>)<br>    .defer(d3.csv,<span class="hljs-string">&quot;../data/ccs_character_total.csv&quot;</span>)<br>    .defer(d3.csv,<span class="hljs-string">&quot;../data/ccs_character_relations.csv&quot;</span>)<br>    .defer(d3.json,<span class="hljs-string">&quot;../data/ccs_color_distribution.json&quot;</span>)<br>    .await(draw);  <span class="hljs-comment">//执行完成队列里的任务之后执行draw</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">draw</span>(<span class="hljs-params">error,chapter_hierarchy_data,chapter_total_data,character_data,cover_data,character_total_data,relation_data,color_data</span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(character_total_data);<br>&#125;<span class="hljs-comment">//await 调用的函数draw，第一个返回值应该是error</span><br><br></code></pre></td></tr></table></figure>
 
@@ -350,7 +350,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/09/%E7%99%BE%E5%8F%98%E5%B0%8F%E6%A8%B1%E4%B8%80%E2%80%94%E2%80%94%E7%9B%B8%E5%85%B3API%E4%BB%8B%E7%BB%8D/">
+                      <a href="/2021/08/09/%E7%99%BE%E5%8F%98%E5%B0%8F%E6%A8%B1%E4%B8%80%E2%80%94%E2%80%94%E7%9B%B8%E5%85%B3API%E4%BB%8B%E7%BB%8D-1/">
                         <span class="hidden-mobile">百变小樱一——相关API介绍</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
