@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"32a1fd05b2d025f26b1169d749180035","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -135,7 +135,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                about me
+                关于我
               </a>
             </li>
           
@@ -145,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/jianli/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 简历
               </a>
@@ -262,7 +262,7 @@
 <blockquote>
 <p>C:\Windows\System32\drivers\etc中的hosts文件，添加如下内容</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-id">#github</span><br><span class="hljs-number">140.82</span>.<span class="hljs-number">112.4</span> github<span class="hljs-selector-class">.com</span><br><span class="hljs-number">199.232</span>.<span class="hljs-number">69.194</span> github<span class="hljs-selector-class">.global</span><span class="hljs-selector-class">.ssl</span><span class="hljs-selector-class">.fastly</span><span class="hljs-selector-class">.net</span><br><span class="hljs-number">185.199</span>.<span class="hljs-number">108.153</span> assets-cdn<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">185.199</span>.<span class="hljs-number">110.153</span> assets-cdn<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">185.199</span>.<span class="hljs-number">111.153</span> assets-cdn<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#github</span><br><span class="hljs-number">140.82</span>.<span class="hljs-number">112.4</span> github<span class="hljs-selector-class">.com</span><br><span class="hljs-number">199.232</span>.<span class="hljs-number">69.194</span> github<span class="hljs-selector-class">.global</span><span class="hljs-selector-class">.ssl</span><span class="hljs-selector-class">.fastly</span><span class="hljs-selector-class">.net</span><br><span class="hljs-number">185.199</span>.<span class="hljs-number">108.153</span> assets-cdn<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">185.199</span>.<span class="hljs-number">110.153</span> assets-cdn<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br><span class="hljs-number">185.199</span>.<span class="hljs-number">111.153</span> assets-cdn<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>刷新DNS缓存</strong><br> 打开cmd窗口，执行<code>ipconfig /flushdns</code>命令</p>
 
@@ -306,15 +306,6 @@
               
             </div>
 
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-
-              </article>
             
           </article>
         </div>
@@ -372,33 +363,9 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     potatomother(李煜)<i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
 
   
 
@@ -458,8 +425,6 @@
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
 
 
 
@@ -485,17 +450,6 @@
 
 
 
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?32a1fd05b2d025f26b1169d749180035";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
   
 
   

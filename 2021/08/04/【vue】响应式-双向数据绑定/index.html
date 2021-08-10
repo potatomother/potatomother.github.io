@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"32a1fd05b2d025f26b1169d749180035","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -135,7 +135,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                about me
+                关于我
               </a>
             </li>
           
@@ -145,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/jianli/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 简历
               </a>
@@ -255,7 +255,7 @@
 <li>depend：用于存储需要运行的target</li>
 <li>notify：重新执行所有存储的target function</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dep</span> </span>&#123;<br>  <span class="hljs-title">constructor</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-built_in">this</span>.subscribers = [] <br>  &#125;<br>  <span class="hljs-function"><span class="hljs-title">depend</span>(<span class="hljs-params"></span>)</span> &#123;  <br>    <span class="hljs-keyword">if</span> (target &amp;&amp; !<span class="hljs-built_in">this</span>.subscribers.includes(target)) &#123;<br>      <span class="hljs-comment">// Only if there is a target &amp; it&#x27;s not already subscribed</span><br>      <span class="hljs-built_in">this</span>.subscribers.push(target)<br>    &#125; <br>  &#125;<br>  <span class="hljs-function"><span class="hljs-title">notify</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-built_in">this</span>.subscribers.forEach(<span class="hljs-function"><span class="hljs-params">sub</span> =&gt;</span> sub())<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dep</span> </span>&#123;<br>  <span class="hljs-title">constructor</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-built_in">this</span>.subscribers = [] <br>  &#125;<br>  <span class="hljs-function"><span class="hljs-title">depend</span>(<span class="hljs-params"></span>)</span> &#123;  <br>    <span class="hljs-keyword">if</span> (target &amp;&amp; !<span class="hljs-built_in">this</span>.subscribers.includes(target)) &#123;<br>      <span class="hljs-comment">// Only if there is a target &amp; it&#x27;s not already subscribed</span><br>      <span class="hljs-built_in">this</span>.subscribers.push(target)<br>    &#125; <br>  &#125;<br>  <span class="hljs-function"><span class="hljs-title">notify</span>(<span class="hljs-params"></span>)</span> &#123;<br>    <span class="hljs-built_in">this</span>.subscribers.forEach(<span class="hljs-function"><span class="hljs-params">sub</span> =&gt;</span> sub())<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在完成以上功能之后，需要考虑 Dep class什么时候更新数据呢？</p>
 <p>在JavaScript中对象有一个方法**Object.defineProperty()**其中有两个属性叫做get和set，get在对象被访问的时候会调用，set在对象的数据被修改的时候调用。通过这两个属性可以监听数据的使用以及修改，当数据修改的时候使用notify()方法，重新运行表达式更新数据。</p>
@@ -266,19 +266,19 @@
 <p><code>descriptor</code>要定义或修改的属性描述符。</p>
 <p><code>get</code> <strong>指读取属性时调用的函数</strong>当访问数据的时候，调用depend()方法，存储相应函数</p>
 <p><code>set</code> <strong>指写入属性时调用的函数</strong>当修改数据的时候，将调用notify()方法，将存储的函数重新运行，达到更新数据的目的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-built_in">Object</span>.defineProperty(data, key, &#123;<br>  <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params"></span>)</span> &#123;<br>    dep.depend() <span class="hljs-comment">// &lt;-- Remember the target we&#x27;re running</span><br>    <span class="hljs-keyword">return</span> internalValue<br>  &#125;,<br>  <span class="hljs-function"><span class="hljs-title">set</span>(<span class="hljs-params">newVal</span>)</span> &#123;<br>    internalValue = newVal<br>    dep.notify() <span class="hljs-comment">// &lt;-- Re-run stored functions</span><br>  &#125;<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">Object</span>.defineProperty(data, key, &#123;<br>  <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params"></span>)</span> &#123;<br>    dep.depend() <span class="hljs-comment">// &lt;-- Remember the target we&#x27;re running</span><br>    <span class="hljs-keyword">return</span> internalValue<br>  &#125;,<br>  <span class="hljs-function"><span class="hljs-title">set</span>(<span class="hljs-params">newVal</span>)</span> &#123;<br>    internalValue = newVal<br>    dep.notify() <span class="hljs-comment">// &lt;-- Re-run stored functions</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <p>最后需要设置一个监听器，监听器控制depend()方法中 表达式的记录，监听器输入表达式。</p>
 <p>调用流程如下：</p>
-<div class="hljs code-wrapper"><pre><code>表达式相关变量被访问——调用get()——调用depend()——若target表达式没有记录，则记录表达式
+<pre><code>表达式相关变量被访问——调用get()——调用depend()——若target表达式没有记录，则记录表达式
 
 表达式相关变量被修改——调用set()——调用notify()——重新运行记录的表达式，修改数据
-</code></pre></div>
+</code></pre>
 <h3 id="3-设置监听Watcher："><a href="#3-设置监听Watcher：" class="headerlink" title="3.设置监听Watcher："></a>3.设置监听Watcher：</h3><p>这里定义需要监听响应的方法或者函数<code>target</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watcher</span>(<span class="hljs-params">myFunc</span>) </span>&#123;<br>  target = myFunc<br>  target()<br>  target = <span class="hljs-literal">null</span><br>&#125;<br><br>watcher(<span class="hljs-function">() =&gt;</span> &#123;<br>  data.total = data.price * data.quantity<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watcher</span>(<span class="hljs-params">myFunc</span>) </span>&#123;<br>  target = myFunc<br>  target()<br>  target = <span class="hljs-literal">null</span><br>&#125;<br><br>watcher(<span class="hljs-function">() =&gt;</span> &#123;<br>  data.total = data.price * data.quantity<br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <h3 id="4-响应程序"><a href="#4-响应程序" class="headerlink" title="4.响应程序"></a>4.响应程序</h3><p><img src="https://z3.ax1x.com/2021/08/05/fVy74S.png" srcset="/img/loading.gif" lazyload alt="vue响应程序"></p>
-<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> data = &#123; <span class="hljs-attr">price</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">quantity</span>: <span class="hljs-number">2</span> &#125;<br>   <span class="hljs-keyword">let</span> target = <span class="hljs-literal">null</span><br>   <br>   <span class="hljs-comment">// This is exactly the same Dep class</span><br>   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dep</span> </span>&#123;<br>     <span class="hljs-title">constructor</span> (<span class="hljs-params"></span>) &#123;<br>       <span class="hljs-built_in">this</span>.subscribers = [] <br>     &#125;<br>     <span class="hljs-function"><span class="hljs-title">depend</span>(<span class="hljs-params"></span>)</span> &#123;  <br>       <span class="hljs-keyword">if</span> (target &amp;&amp; !<span class="hljs-built_in">this</span>.subscribers.includes(target)) &#123;<br>         <span class="hljs-comment">// Only if there is a target &amp; it&#x27;s not already subscribed</span><br>         <span class="hljs-built_in">this</span>.subscribers.push(target)<br>       &#125; <br>     &#125;<br>     <span class="hljs-function"><span class="hljs-title">notify</span>(<span class="hljs-params"></span>)</span> &#123;<br>       <span class="hljs-built_in">this</span>.subscribers.forEach(<span class="hljs-function"><span class="hljs-params">sub</span> =&gt;</span> sub())<br>     &#125;<br>   &#125;<br>   <br>   <span class="hljs-comment">// Go through each of our data properties</span><br>   <span class="hljs-built_in">Object</span>.keys(data).forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> &#123;<br>     <span class="hljs-keyword">let</span> internalValue = data[key]<br>     <br>     <span class="hljs-comment">// Each property gets a dependency instance</span><br>     <span class="hljs-keyword">const</span> dep = <span class="hljs-keyword">new</span> Dep()<br>     <br>     <span class="hljs-built_in">Object</span>.defineProperty(data, key, &#123;<br>       <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params"></span>)</span> &#123;<br>         dep.depend() <span class="hljs-comment">// &lt;-- Remember the target we&#x27;re running</span><br>         <span class="hljs-keyword">return</span> internalValue<br>       &#125;,<br>       <span class="hljs-function"><span class="hljs-title">set</span>(<span class="hljs-params">newVal</span>)</span> &#123;<br>         internalValue = newVal<br>         dep.notify() <span class="hljs-comment">// &lt;-- Re-run stored functions</span><br>       &#125;<br>     &#125;)<br>   &#125;)<br>   <br>   <span class="hljs-comment">// My watcher no longer calls dep.depend,</span><br>   <span class="hljs-comment">// since that gets called from inside our get method.</span><br>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watcher</span>(<span class="hljs-params">myFunc</span>) </span>&#123;<br>     target = myFunc<br>     target()<br>     target = <span class="hljs-literal">null</span><br>   &#125;<br>   <br>   watcher(<span class="hljs-function">() =&gt;</span> &#123;<br>     data.total = data.price * data.quantity<br>   &#125;)<br></code></pre></div></td></tr></table></figure>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> data = &#123; <span class="hljs-attr">price</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">quantity</span>: <span class="hljs-number">2</span> &#125;<br>   <span class="hljs-keyword">let</span> target = <span class="hljs-literal">null</span><br>   <br>   <span class="hljs-comment">// This is exactly the same Dep class</span><br>   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dep</span> </span>&#123;<br>     <span class="hljs-title">constructor</span> (<span class="hljs-params"></span>) &#123;<br>       <span class="hljs-built_in">this</span>.subscribers = [] <br>     &#125;<br>     <span class="hljs-function"><span class="hljs-title">depend</span>(<span class="hljs-params"></span>)</span> &#123;  <br>       <span class="hljs-keyword">if</span> (target &amp;&amp; !<span class="hljs-built_in">this</span>.subscribers.includes(target)) &#123;<br>         <span class="hljs-comment">// Only if there is a target &amp; it&#x27;s not already subscribed</span><br>         <span class="hljs-built_in">this</span>.subscribers.push(target)<br>       &#125; <br>     &#125;<br>     <span class="hljs-function"><span class="hljs-title">notify</span>(<span class="hljs-params"></span>)</span> &#123;<br>       <span class="hljs-built_in">this</span>.subscribers.forEach(<span class="hljs-function"><span class="hljs-params">sub</span> =&gt;</span> sub())<br>     &#125;<br>   &#125;<br>   <br>   <span class="hljs-comment">// Go through each of our data properties</span><br>   <span class="hljs-built_in">Object</span>.keys(data).forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> &#123;<br>     <span class="hljs-keyword">let</span> internalValue = data[key]<br>     <br>     <span class="hljs-comment">// Each property gets a dependency instance</span><br>     <span class="hljs-keyword">const</span> dep = <span class="hljs-keyword">new</span> Dep()<br>     <br>     <span class="hljs-built_in">Object</span>.defineProperty(data, key, &#123;<br>       <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params"></span>)</span> &#123;<br>         dep.depend() <span class="hljs-comment">// &lt;-- Remember the target we&#x27;re running</span><br>         <span class="hljs-keyword">return</span> internalValue<br>       &#125;,<br>       <span class="hljs-function"><span class="hljs-title">set</span>(<span class="hljs-params">newVal</span>)</span> &#123;<br>         internalValue = newVal<br>         dep.notify() <span class="hljs-comment">// &lt;-- Re-run stored functions</span><br>       &#125;<br>     &#125;)<br>   &#125;)<br>   <br>   <span class="hljs-comment">// My watcher no longer calls dep.depend,</span><br>   <span class="hljs-comment">// since that gets called from inside our get method.</span><br>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watcher</span>(<span class="hljs-params">myFunc</span>) </span>&#123;<br>     target = myFunc<br>     target()<br>     target = <span class="hljs-literal">null</span><br>   &#125;<br>   <br>   watcher(<span class="hljs-function">() =&gt;</span> &#123;<br>     data.total = data.price * data.quantity<br>   &#125;)<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -327,15 +327,6 @@
               
             </div>
 
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-
-              </article>
             
           </article>
         </div>
@@ -393,33 +384,9 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     potatomother(李煜)<i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
 
   
 
@@ -479,8 +446,6 @@
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
 
 
 
@@ -506,17 +471,6 @@
 
 
 
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?32a1fd05b2d025f26b1169d749180035";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
   
 
   
