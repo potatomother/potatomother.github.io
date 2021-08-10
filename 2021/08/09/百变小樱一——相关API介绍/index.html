@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"32a1fd05b2d025f26b1169d749180035","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,7 +68,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>pottomother(李煜)</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>potatomother(李煜)</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -135,7 +135,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                about me
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/jianli/">
+                <i class="iconfont icon-user-fill"></i>
+                简历
               </a>
             </li>
           
@@ -238,7 +250,7 @@
 <h3 id="d3-queue-await-error-…"><a href="#d3-queue-await-error-…" class="headerlink" title="d3.queue.await(error,…)"></a>d3.queue.await(error,…)</h3><p>执行完所有的task之后执行的回调函数，第一个参数是error，后面是任务（task）的结果</p>
 <h3 id="d3-json"><a href="#d3-json" class="headerlink" title="d3.json"></a><a target="_blank" rel="noopener" href="https://d3-wiki.readthedocs.io/zh_CN/master/%E8%AF%B7%E6%B1%82#d3_json">d3.json</a></h3><p>请求一个JSON对象。</p>
 <h3 id="d3-stratify"><a href="#d3-stratify" class="headerlink" title="d3.stratify()"></a>d3.stratify()</h3><p>转为层次结构数据</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> root = d3.stratify()<br>    .id(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>&#123; <span class="hljs-keyword">return</span> d.name; &#125;)<br>    .parentId(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>&#123; <span class="hljs-keyword">return</span> d.parent; &#125;)<br>    (table);<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">var</span> root = d3.stratify()<br>    .id(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>&#123; <span class="hljs-keyword">return</span> d.name; &#125;)<br>    .parentId(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>&#123; <span class="hljs-keyword">return</span> d.parent; &#125;)<br>    (table);<br></code></pre></div></td></tr></table></figure>
 
 <h3 id="d3-cluster-lt-源码-gt-opens-new-window"><a href="#d3-cluster-lt-源码-gt-opens-new-window" class="headerlink" title="#d3.cluster() &lt;源码&gt;(opens new window)"></a><a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-hierarchy/#cluster">#</a>d3.<strong>cluster</strong>() <a target="_blank" rel="noopener" href="https://github.com/d3/d3-hierarchy/blob/master/src/cluster.js">&lt;源码&gt;(opens new window)</a></h3><p>使用默认的配置创建一个新的系统树布局</p>
 <p>如果要生成一个 <a target="_blank" rel="noopener" href="http://bl.ocks.org/mbostock/4739610f6d96aaad2fb1e78a72b385ab">radial layout(径向布局) (opens new window)</a>则可以将其设置为 [360, <em>radius</em>] 用以表示角度范围为 <code>360°</code> 并且半径为 <em>radius</em>。</p>
@@ -257,7 +269,7 @@
 </ul>
 <h3 id="d3-timer-callback-delay-time-lt-gt-opens-new-window"><a href="#d3-timer-callback-delay-time-lt-gt-opens-new-window" class="headerlink" title="d3.timer(callback[, delay[, time]]) &lt;&gt;(opens new window)"></a>d3.<strong>timer</strong>(<em>callback</em>[, <em>delay</em>[, <em>time</em>]]) <a target="_blank" rel="noopener" href="https://github.com/d3/d3-timer/blob/master/src/timer.js#L52">&lt;&gt;(opens new window)</a></h3><p>定义一个新的定时器，然后重复执行指定的 <em>callback</em> 直到定时器被 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-timer/#timer_stop">stopped</a>。可选的数值类型 <em>delay</em> 单位为毫秒可以用来指定调用 <em>callback</em> 的延迟时间，如果没有指定 <em>delay</em> 则默认为 0。延迟时间相对于指定的 <em>time</em> (ms)，如果没有指定 <em>time</em> 则默认为 <a target="_blank" rel="noopener" href="https://d3js.org.cn/document/d3-timer/#now">now</a>.</p>
 <p><em>callback</em> 参数为 <em>elapsed</em> 以表示自从定时器被激活后过去的时间(表面上的)。例如:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> t = d3.timer(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">elapsed</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(elapsed);<br>  <span class="hljs-keyword">if</span> (elapsed &gt; <span class="hljs-number">200</span>) t.stop();<br>&#125;, <span class="hljs-number">150</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">var</span> t = d3.timer(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">elapsed</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(elapsed);<br>  <span class="hljs-keyword">if</span> (elapsed &gt; <span class="hljs-number">200</span>) t.stop();<br>&#125;, <span class="hljs-number">150</span>);<br></code></pre></div></td></tr></table></figure>
 
 <h2 id="Canvas-API"><a href="#Canvas-API" class="headerlink" title="Canvas API"></a>Canvas API</h2><h3 id="getContext"><a href="#getContext" class="headerlink" title="getContext"></a>getContext</h3><p>canvas.getContext(‘2d’); </p>
 <p><code>canvas.getContext(&#39;2d&#39;)</code>方法让我们拿到一个<code>CanvasRenderingContext2D</code>对象，所有的绘图操作都需要通过这个对象完成。</p>
@@ -265,7 +277,7 @@
 <h3 id="CanvasRenderingContext2D-globalCompositeOperation"><a href="#CanvasRenderingContext2D-globalCompositeOperation" class="headerlink" title="CanvasRenderingContext2D.globalCompositeOperation"></a>CanvasRenderingContext2D.globalCompositeOperation</h3><p>绘制新形状时应用的合成操作的类型，将顶层像素与底层相应像素相乘，结果是一幅更黑暗的图片</p>
 <p><img src="C:\Users\liyu\AppData\Roaming\Typora\typora-user-images\image-20210808153439384.png" srcset="/img/loading.gif" lazyload alt="image-20210808153439384"></p>
 <h3 id="CanvasRenderingContext2D-lineCap"><a href="#CanvasRenderingContext2D-lineCap" class="headerlink" title="CanvasRenderingContext2D.lineCap"></a>CanvasRenderingContext2D.lineCap</h3><p>是 Canvas 2D API 指定如何绘制每一条线段末端的属性。有3个可能的值，分别是：<code>butt</code>, <code>round</code> and <code>square</code>。默认值是 `butt。</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">ctx.lineCap</span> = <span class="hljs-string">&quot;round&quot;</span><span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-attr">ctx.lineCap</span> = <span class="hljs-string">&quot;round&quot;</span><span class="hljs-comment">;</span><br></code></pre></div></td></tr></table></figure>
 
 <p><code>round</code>线段末端以圆形结束。</p>
 <h3 id="CanvasRenderingContext2D-lineWidth"><a href="#CanvasRenderingContext2D-lineWidth" class="headerlink" title="CanvasRenderingContext2D.lineWidth"></a>CanvasRenderingContext2D.lineWidth</h3><p>是 Canvas 2D API 设置线段厚度的属性（即线段的宽度）。</p>
@@ -320,6 +332,15 @@
               
             </div>
 
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+
+              </article>
             
           </article>
         </div>
@@ -377,9 +398,33 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     potatomother(李煜)<i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -439,6 +484,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -464,6 +511,17 @@
 
 
 
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?32a1fd05b2d025f26b1169d749180035";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
   
 
   
