@@ -22,3 +22,5 @@ document.addEventListener('DOMContentLoaded', function() {
   Fluid.boot.registerEvents();
   Fluid.boot.initPlugins();
 });
+
+if(document.getElementById("mcvideo")){ document.getElementById("mcvideo") .style.height=document. getElementById("mcvideo") .scrollWidth*0.64+"px"; } 
