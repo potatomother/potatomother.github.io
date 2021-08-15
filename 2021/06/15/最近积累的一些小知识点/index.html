@@ -18,7 +18,7 @@
   <meta name="author" content="Yu Li">
   <meta name="keywords" content="">
   
-  <title>Hello World - Potatomother Blog</title>
+  <title>最近积累的一些小知识点 - Potatomother Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="最近积累的一些小知识点">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-03 10:43" pubdate>
-        2021年8月3日 上午
+      <time datetime="2021-06-15 15:07" pubdate>
+        2021年6月15日 下午
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      75 字
+      1k 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      12
        分钟
     </span>
   
@@ -237,28 +237,105 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">最近积累的一些小知识点</h1>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+              <h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p><strong>1.盒子垂直水平居中的方法</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs css">//方法<span class="hljs-number">1</span><br><span class="hljs-selector-class">.parent</span>&#123;<br><br><span class="hljs-attribute">position</span>:relative;<br><br>&#125;<br><br><span class="hljs-selector-class">.child</span>&#123;<br><br><span class="hljs-attribute">position</span>:absolute;<br><br><span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<br><br><span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>;<br><br><span class="hljs-attribute">margin-top</span>:-<span class="hljs-number">50px</span>;<br><br><span class="hljs-attribute">margin-left</span>:-<span class="hljs-number">50px</span>;<br><br>&#125;<br><br>//方法<span class="hljs-number">2</span><br><span class="hljs-selector-class">.parent</span>&#123;<br>    <span class="hljs-attribute">position</span>:relative<br>&#125;<br><span class="hljs-selector-class">.child</span>&#123;<br>    <span class="hljs-attribute">position</span>:absolute;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span><br>    transform:<span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>,-<span class="hljs-number">50%</span>);<br>&#125;<br>//方法三<br><span class="hljs-attribute">display</span>：<span class="hljs-attribute">flex</span><br><br><span class="hljs-attribute">justify-content</span>：center<br><br>align-item：center<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p><strong>2.css 清除浮动</strong></p>
+<p>方法一：在浮动的元素后增加</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs applescript">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;clear&quot;</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br>.clear&#123;<br>	clear:both;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>方法二：在包裹float的容器元素上增加 overfloat：hidden  或者 overfloat：auto</p>
+<p>flex:1什么意思，三个属性是什么</p>
+<p>垂直居中一个浮动元素 </p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-attribute">display</span>：<span class="hljs-attribute">flex</span><br><br><span class="hljs-attribute">justify-content</span>：center<br><br>align-item：center<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><strong>3.BFC的理解，有什么用</strong></p>
+<p>Block Formatting Context 跨级格式化上下文，是一个有隔离功能的容器，里面的布局不会影响外部的元素。</p>
+<p>浮动定位（绝对定位，固定定位）会触发，应用：阻止浮动元素的覆盖，左边定宽，右边自适应，下外边距折叠，清除浮动。</p>
+<p><strong>4.px em rem 区别，rem怎么实现自适应</strong></p>
+<p>px像素。相对屏幕分辨率说的，</p>
+<p>em 相对当前对象内的文本字体大小，默认情况下1em=16px</p>
+<p>rem 相对于根元素设置大小，设置 根元素的字体大小，整个的大小也对相对改变</p>
+<p>cass 实现三角形</p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><p><strong>1.JS的原始类型？null是对象吗？</strong></p>
+<p>js的原始类型 null undefined boolean number string symbol</p>
+<p> <strong>2.对象和原始类型的不同之处？函数参数是对象会发生什么问题？</strong></p>
+<p>js中除了原始类型其他的都是对象类型。对象类型和原始类型的不同之处是，原始类型中存储的数据的值，对象类型中存储的指针，通过访问指针对内存中的数据进行修改。</p>
+<p>当函数参数是对象时，a赋值给b，赋的值是a中存储地址而不是真实的值。修改b的值实际是通过访问b中存储的地址修改了内存中的值，此时访问a的值还是通过a中存储的地址去访问内存中的值，这是这个值已经被b修改。</p>
+<p>如果想要访问</p>
+<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><p><strong>1.vue指令</strong></p>
+<p><strong>html内容绑定：</strong></p>
+<p>v-model=“ vue值”</p>
+<p>v-on：触发=“触发之后执行的函数”</p>
+<p>​    简写 @触发=“触发之后执行的函数”</p>
+<p><strong>html属性绑定</strong></p>
+<p>v-bind:属性=“ vue值”      v-bind:class=“ {css样式：true  }”</p>
+<p>​    简写  :属性=“ vue值”</p>
+<p><strong>html插入内容</strong></p>
+<p>v-html=“vue值”</p>
+<p>更新元素的 <code>innerHTML</code></p>
+<p>v-text=”vue值”</p>
+<p>更新元素的 <code>textContent</code></p>
+<p><strong>2..vue生命周期</strong></p>
+<p>beforeCreated</p>
+<p>created</p>
+<p>beforeMounted</p>
+<p>mounted</p>
+<p>beforeupdated</p>
+<p>updated</p>
+<p>detroyed</p>
+<p>beforeDestroy</p>
+<p><strong>第一次加载页面的时候会触发哪些钩子函数</strong></p>
+<p>beforeCreate, created, beforeMount, mounted </p>
+<p><strong>在哪个钩子阶段可以操作DOM</strong>  </p>
+<p>mounted</p>
+<p><strong>父组件向子组件传值</strong> </p>
+<p>父组件 v-bind  子组件 props 接收</p>
+<p><strong>子组件向父组件传递事件</strong></p>
+<p>子组件 绑定方法</p>
+<p>兄弟组件之间传值</p>
+<p><strong>keep-alive 怎么使用</strong></p>
+<p>进行缓存，增加生命周期  activated<code>和</code>deactivated</p>
+<p>computed和watch之间的区别</p>
+<p>性能优化</p>
+<p>深浅拷贝</p>
+<p>vue动态添加属性实现数据响应 v-bind</p>
+<p>vue路由懒加载</p>
+<p>vue封装组件</p>
+<p>created 和mounted的区别  created的html节点没有渲染，mounted可以进行数据请求数据绑定，可以把数据绑定到DOM上</p>
+<p>登录鉴权</p>
+<p>路由守卫</p>
+<p>http 三次握手四次挥手 状态码</p>
+<p>axios怎么实现</p>
+<p><strong>跨域 什么是跨域？限制了什么？不同源的话进行什么策略</strong></p>
+<p>常用的跨域方法有 JSONP，CROS，正向代理，反向代理。</p>
+<p>JSONP和CROS方法需要后端服务器的配合，反向代理是在服务端建立代理给客户端发送资源。</p>
+<p>jsonp nigix websocket php修改header</p>
+<p>代理设置location的哪一项</p>
+<p>为什么修改header就可以跨域</p>
+<p>this指向 普通函数和箭头函数的this 怎么改变普通函数里面的this指向</p>
+<p>apply call bind 有什么区别 apply实现bind函数</p>
+<p>promise async await 区别</p>
+<p>es6新特性</p>
+<p>let var const</p>
+<p><strong>什么是mock数据？</strong></p>
+<p>前后端同时开发的时候，后端接口数据没有出来，前端可以mock假数据，模拟开发；</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CSS-JavaScript-Vue/">CSS JavaScript Vue</a>
+                    
+                  </div>
                 
               </div>
               
@@ -273,9 +350,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/04/%E8%A7%A3%E5%86%B3GitHub%E5%AE%98%E7%BD%91%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98/">
+                      <a href="/2021/06/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">解决GitHub官网打不开问题</span>
+                        <span class="hidden-mobile">计算机网络知识点</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -283,8 +360,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/20/%E3%80%90%E7%BA%AFjs-vue%E3%80%91%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0markdown%E7%BC%96%E8%BE%91%E5%99%A8/">
-                        <span class="hidden-mobile">【纯js+vue】两种方式实现markdown编辑器</span>
+                      <a href="/2021/06/15/%E8%A7%A3%E5%86%B3GitHub%E5%AE%98%E7%BD%91%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98/">
+                        <span class="hidden-mobile">解决GitHub官网打不开问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
