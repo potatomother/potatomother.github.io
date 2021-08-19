@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      1.4k 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      16
        分钟
     </span>
   
@@ -249,9 +249,6 @@
 
 <p>方法二：在包裹float的容器元素上增加 overfloat：hidden  或者 overfloat：auto</p>
 <p>flex:1什么意思，三个属性是什么</p>
-<p>垂直居中一个浮动元素 </p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-attribute">display</span>：<span class="hljs-attribute">flex</span><br><br><span class="hljs-attribute">justify-content</span>：center<br><br>align-item：center<br></code></pre></td></tr></table></figure>
-
 <p><strong>3.BFC的理解，有什么用</strong></p>
 <p>Block Formatting Context 跨级格式化上下文，是一个有隔离功能的容器，里面的布局不会影响外部的元素。</p>
 <p>浮动定位（绝对定位，固定定位）会触发，应用：阻止浮动元素的覆盖，左边定宽，右边自适应，下外边距折叠，清除浮动。</p>
@@ -265,7 +262,33 @@
 <p> <strong>2.对象和原始类型的不同之处？函数参数是对象会发生什么问题？</strong></p>
 <p>js中除了原始类型其他的都是对象类型。对象类型和原始类型的不同之处是，原始类型中存储的数据的值，对象类型中存储的指针，通过访问指针对内存中的数据进行修改。</p>
 <p>当函数参数是对象时，a赋值给b，赋的值是a中存储地址而不是真实的值。修改b的值实际是通过访问b中存储的地址修改了内存中的值，此时访问a的值还是通过a中存储的地址去访问内存中的值，这是这个值已经被b修改。</p>
-<p>如果想要访问</p>
+<p><strong>深浅拷贝</strong></p>
+<p>普通拷贝：拷贝基本类型的值，对象类型的地址</p>
+<p>浅拷贝，拷贝基本类型的值，对象类型中 基本类型的值，对象类型的地址。</p>
+<p>怎么实现浅拷贝？可以用     <code>Object.assign()</code>    <code>...</code></p>
+<p>深拷贝，拷贝所有类型的值</p>
+<p>怎么实现深拷贝？<code>JSON.parse(JSON.stringify(object))</code></p>
+<p><strong>作用域 作用域链</strong></p>
+<p>变量起作用的地方叫作用域一般作用域有全局作用域（var）和块级作用域（let const）。</p>
+<p><strong>闭包？形成原因？ 作用？</strong></p>
+<p>闭包：有权访问另一个函数作用域的函数</p>
+<p>形成原因：存在上级作用域的引用</p>
+<p>作用：1.保护函数的私有变量不受外部干扰2.形成不被销毁的栈内存3.将上级作用域的引用保存下来，实现方法或属性的私有化</p>
+<p>典型题目</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>, i);<br>    &#125;, <span class="hljs-number">1000</span>);<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>, i);<br><br></code></pre></td></tr></table></figure>
+
+<p>原型原型链</p>
+<p><strong>let var const</strong></p>
+<p>var全局作用域，可以在windows访问，同时存在变量提升。</p>
+<p>let 仅作用于块级作用域，有临时死区</p>
+<p>const和let差不多区别是，第一次声明需要设置初始值，并且声明的原始类型不可改变，对象类型不可修改地址（地址指向的数据可以改）。</p>
+<p><strong>this指向 普通函数？和箭头函数？  怎么改变普通函数里面的this指向？</strong></p>
+<p>一般函数的this都指向函数的地方，如果是对象实例化的直接指向实例化的对象。</p>
+<p>箭头函数本身没有this，使用的this看上级作用域</p>
+<p>想修改普通函数的this指向可以通过apply call bind</p>
+<p><strong>apply call bind？ 有什么区别？ apply实现bind函数？</strong></p>
+<p>promise async await 区别</p>
+<p>es6新特性</p>
 <h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><p><strong>1.vue指令</strong></p>
 <p><strong>html内容绑定：</strong></p>
 <p>v-model=“ vue值”</p>
@@ -298,10 +321,9 @@
 <p>子组件 绑定方法</p>
 <p>兄弟组件之间传值</p>
 <p><strong>keep-alive 怎么使用</strong></p>
-<p>进行缓存，增加生命周期  activated<code>和</code>deactivated</p>
+<p>进行缓存，增加生命周期  activated和deactivated</p>
 <p>computed和watch之间的区别</p>
 <p>性能优化</p>
-<p>深浅拷贝</p>
 <p>vue动态添加属性实现数据响应 v-bind</p>
 <p>vue路由懒加载</p>
 <p>vue封装组件</p>
@@ -316,11 +338,6 @@
 <p>jsonp nigix websocket php修改header</p>
 <p>代理设置location的哪一项</p>
 <p>为什么修改header就可以跨域</p>
-<p>this指向 普通函数和箭头函数的this 怎么改变普通函数里面的this指向</p>
-<p>apply call bind 有什么区别 apply实现bind函数</p>
-<p>promise async await 区别</p>
-<p>es6新特性</p>
-<p>let var const</p>
 <p><strong>什么是mock数据？</strong></p>
 <p>前后端同时开发的时候，后端接口数据没有出来，前端可以mock假数据，模拟开发；</p>
 
