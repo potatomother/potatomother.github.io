@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      1.8k 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      16
+      21
        分钟
     </span>
   
@@ -287,8 +287,18 @@
 <p>箭头函数本身没有this，使用的this看上级作用域</p>
 <p>想修改普通函数的this指向可以通过apply call bind</p>
 <p><strong>apply call bind？ 有什么区别？ apply实现bind函数？</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">fun.call(thisArg, param1, param2, ...)<br>fun.apply(thisArg, [param1,param2,...])<br>fun.bind(thisArg, param1, param2, ...)<br></code></pre></td></tr></table></figure>
+
+<p>返回值</p>
+<p>call apply返回值：fun执行的结果</p>
+<p>bind返回值：fun的拷贝 </p>
+<p>参数：</p>
+<p><code>thisArg</code>：新的this指向</p>
+<p><code>param1,param2</code>(可选): 传给<code>fun</code>的参数。</p>
 <p>promise async await 区别</p>
 <p>es6新特性</p>
+<p>链表在js的实现，和数组的区别</p>
+<p> 介绍链表 栈 队列 树的差异<br>数组增删比链表麻烦 为什么</p>
 <h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><p><strong>1.vue指令</strong></p>
 <p><strong>html内容绑定：</strong></p>
 <p>v-model=“ vue值”</p>
@@ -322,17 +332,27 @@
 <p>兄弟组件之间传值</p>
 <p><strong>keep-alive 怎么使用</strong></p>
 <p>进行缓存，增加生命周期  activated和deactivated</p>
+<p><strong>vue双向数据绑定</strong></p>
+<p>object.defineProperty  （vue 2.0）和Proxy（vue3.0） 实现</p>
+<p>优缺点：</p>
+<p>1.object.defineProperty 劫持对象属性，Proxy劫持整个对象。</p>
+<p>2.Proxy可以支持多种API，object.defineProperty 不支持数组的API</p>
+<p>3.object.defineProperty需要遍历对象的每个属性</p>
+<p><strong>为什么监测不到数组的变化？如何能做到proxy对低版本浏览器的兼容？</strong> </p>
 <p>computed和watch之间的区别</p>
 <p>性能优化</p>
+<p>nextTick原理和使用场景</p>
 <p>vue动态添加属性实现数据响应 v-bind</p>
 <p>vue路由懒加载</p>
 <p>vue封装组件</p>
 <p>created 和mounted的区别  created的html节点没有渲染，mounted可以进行数据请求数据绑定，可以把数据绑定到DOM上</p>
 <p>登录鉴权</p>
 <p>路由守卫</p>
-<p>http 三次握手四次挥手 状态码</p>
 <p>axios怎么实现</p>
 <p><strong>跨域 什么是跨域？限制了什么？不同源的话进行什么策略</strong></p>
+<p>域名协议端口有一个不同就是跨域</p>
+<p>浏览器会拦截跨域返回的数据</p>
+<p>但有的不限制：1.scrpit标签里面的请求</p>
 <p>常用的跨域方法有 JSONP，CROS，正向代理，反向代理。</p>
 <p>JSONP和CROS方法需要后端服务器的配合，反向代理是在服务端建立代理给客户端发送资源。</p>
 <p>jsonp nigix websocket php修改header</p>
@@ -340,6 +360,15 @@
 <p>为什么修改header就可以跨域</p>
 <p><strong>什么是mock数据？</strong></p>
 <p>前后端同时开发的时候，后端接口数据没有出来，前端可以mock假数据，模拟开发；</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p><strong>都有哪些排序算法？哪些是nlogn</strong></p>
+<p>冒泡 选择 插入 归并 快排 堆排 希尔排序</p>
+<p>nlogn ：归并 快排 堆排 希尔排序</p>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>http和https的差异 https的保密机制</p>
+<p> 什么地方用对称加密 什么地方用非对称加密</p>
+<p>http 三次握手四次挥手 状态码</p>
+<p>CDN的实现原理， 怎么做到提速的？</p>
+<p>tcp和udp<br>tcp调度算法</p>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p>完成项目的整个流程，（明确需求，实现功能，自测，他人测试，模块测试，上线，用户的体验和反馈，修改，形成一个不断更新的版本）</p>
 
             </div>
             <hr>
