@@ -18,7 +18,7 @@
   <meta name="author" content="Yu Li">
   <meta name="keywords" content="">
   
-  <title>dfs bfs和快排 - Potatomother Blog</title>
+  <title>手写深拷贝 - Potatomother Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="dfs bfs和快排">
+            <span class="h2" id="subtitle" title="手写深拷贝">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-19 19:48" pubdate>
-        2021年8月19日 晚上
+      <time datetime="2021-08-20 13:20" pubdate>
+        2021年8月20日 下午
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      346 字
+      55 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      1
        分钟
     </span>
   
@@ -237,28 +237,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">dfs bfs和快排</h1>
+            <h1 style="display: none">手写深拷贝</h1>
             
             <div class="markdown-body">
-              <h1 id="dfs-bfs和快排"><a href="#dfs-bfs和快排" class="headerlink" title="dfs bfs和快排"></a>dfs bfs和快排</h1><h2 id="深度优先和广度优先的测试数据"><a href="#深度优先和广度优先的测试数据" class="headerlink" title="深度优先和广度优先的测试数据"></a>深度优先和广度优先的测试数据</h2><p>//测试数据</p>
-<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xl">var <span class="hljs-keyword">tree</span> = &#123;    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;中国&#x27;</span>,    children: [        &#123;            <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;北京&#x27;</span>,            children: [                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;朝阳群众&#x27;</span>,                    children: [                        &#123;                            <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;西宁市&#x27;</span>,                            code: <span class="hljs-string">&#x27;0521&#x27;</span>,                        &#125;                    ]                &#125;,                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;海淀区&#x27;</span>,                &#125;,                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;昌平区&#x27;</span>,                &#125;,            ],        &#125;,        &#123;            <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;浙江省&#x27;</span>,            children: [                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;杭州市&#x27;</span>,                    code: <span class="hljs-string">&#x27;0571&#x27;</span>,                &#125;,                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;嘉兴市&#x27;</span>,                &#125;,                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;绍兴市&#x27;</span>,                &#125;,                &#123;                    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;宁波市&#x27;</span>,                &#125;,            ],        &#125;,    ], &#125;;<br><br><br></code></pre></td></tr></table></figure>
+              <h1 id="手写深拷贝"><a href="#手写深拷贝" class="headerlink" title="手写深拷贝"></a>手写深拷贝</h1><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">function</span> deep<span class="hljs-constructor">Copy(<span class="hljs-params">p</span>,<span class="hljs-params">c</span>)</span>&#123;<br>    var c=c <span class="hljs-pattern-match"><span class="hljs-operator">||</span>&#123;&#125; ;</span><br><span class="hljs-pattern-match">    <span class="hljs-keyword">for</span>(var i <span class="hljs-keyword">in</span> p)&#123;</span><br><span class="hljs-pattern-match">		<span class="hljs-keyword">if</span>(typeof p[i] <span class="hljs-operator">==</span>= &#x27;<span class="hljs-keyword">object</span>&#x27;)&#123;</span><br><span class="hljs-pattern-match">			c[i]=(typeof p[i].constructor <span class="hljs-operator">==</span>= <span class="hljs-constructor">Array</span>)?[]:&#123;&#125;</span><br><span class="hljs-pattern-match">			deep<span class="hljs-constructor">Copy(<span class="hljs-params">p</span>[<span class="hljs-params">i</span>],<span class="hljs-params">c</span>[<span class="hljs-params">i</span>])</span></span><br><span class="hljs-pattern-match">		&#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="hljs-pattern-match">		c[i]=p[i]</span><br><span class="hljs-pattern-match">		&#125;</span><br><span class="hljs-pattern-match">    &#125;</span><br><span class="hljs-pattern-match">	return c</span><br><span class="hljs-pattern-match">&#125;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="dfs深度优先遍历"><a href="#dfs深度优先遍历" class="headerlink" title="dfs深度优先遍历"></a>dfs深度优先遍历</h2><p>//result 记录遍历结果，stack 栈</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">let</span> result = []<br><br>function dfs(tree) &#123;<br>	<span class="hljs-built_in">let</span> stack = []<br>	stack.<span class="hljs-built_in">push</span>(tree)<br>    <span class="hljs-keyword">while</span>(stack.<span class="hljs-built_in">length</span> != <span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-built_in">let</span> item =stack.<span class="hljs-built_in">pop</span>()<br>		result.<span class="hljs-built_in">push</span>(item.name)<br>		<span class="hljs-built_in">let</span> children =item.children<br>		<span class="hljs-keyword">if</span>(children)&#123;<br>				<span class="hljs-keyword">for</span>( <span class="hljs-built_in">let</span> i=children.<span class="hljs-built_in">length</span>-<span class="hljs-number">1</span> ;i&gt;=<span class="hljs-number">0</span>;i-- )&#123;<br>					stack.<span class="hljs-built_in">push</span>(children[i])<br>				&#125;// <span class="hljs-keyword">for</span>	<br>		&#125;<br>	&#125;<br><span class="hljs-built_in">return</span> result<br>&#125;<br>dfs(tree)<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="bfs广搜"><a href="#bfs广搜" class="headerlink" title="bfs广搜"></a>bfs广搜</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">let</span> result = []<br>function bfs(tree)&#123;<br>	<span class="hljs-built_in">let</span> duilie=[]<br>	duilie.<span class="hljs-built_in">push</span>(tree)<br>	result.<span class="hljs-built_in">push</span>(tree.name)<br>	<span class="hljs-keyword">while</span>(duilie.<span class="hljs-built_in">length</span>)&#123;<br>		<span class="hljs-built_in">let</span> item = duilie.shift()	<br>		<span class="hljs-built_in">let</span> children=item.children<br>		<span class="hljs-keyword">if</span>(children)&#123;<br>			<span class="hljs-keyword">for</span>(<span class="hljs-built_in">let</span> i=<span class="hljs-number">0</span>;i&lt;children.<span class="hljs-built_in">length</span>;i++ )&#123;<br>                duilie.<span class="hljs-built_in">push</span>(children[i])<br>                result.<span class="hljs-built_in">push</span>(children[i].name)<br>			&#125;<br>		&#125;<br><br>	&#125;<br><span class="hljs-built_in">return</span> result<br>&#125;<br>bfs(tree)<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs coq"><span class="hljs-keyword">let</span> a=[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>]<br>function quicksort(<span class="hljs-built_in">left</span>,<span class="hljs-built_in">right</span>)&#123;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">left</span>&gt;<span class="hljs-built_in">right</span>)<span class="hljs-keyword">return</span>;<br><br>	<span class="hljs-keyword">let</span> i=<span class="hljs-built_in">left</span>,j=<span class="hljs-built_in">right</span>,temp=a[<span class="hljs-built_in">left</span>];<br>	while(i!=j)&#123;<br>        while(a[j]&gt;=temp &amp;&amp; i&lt;j)<br>            j--;<br>        while(a[i]&lt;=temp &amp;&amp; i&lt;j)<br>            i++;<br>        <span class="hljs-keyword">if</span>(i&lt;j)&#123;<br>            <span class="hljs-keyword">let</span> t=a[i]<br>            a[i]=a[j]<br>            a[j]=t<br>        &#125;<br>	&#125;<br>	a[<span class="hljs-built_in">left</span>]=a[i]<br>	a[i]=temp<br>	quicksort(<span class="hljs-built_in">left</span>,i<span class="hljs-number">-1</span>)<br>	quicksort(i+<span class="hljs-number">1</span>,<span class="hljs-built_in">right</span>)<br>&#125;<br>quicksort(<span class="hljs-number">0</span>,a.length<span class="hljs-number">-1</span>)<br></code></pre></td></tr></table></figure>
-
-<p>​    </p>
 
             </div>
             <hr>
@@ -269,7 +252,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/js/">js</a>
                     
                   </div>
                 
@@ -286,18 +269,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/20/%E6%89%8B%E5%86%99%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">手写深拷贝</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/09/%E7%99%BE%E5%8F%98%E5%B0%8F%E6%A8%B1%E4%BA%8C%E2%80%94%E2%80%94%E4%BB%A3%E7%A0%81%E6%8B%86%E8%A7%A3%E5%AE%9E%E7%8E%B0/">
-                        <span class="hidden-mobile">百变小樱二——代码拆解实现</span>
+                      <a href="/2021/08/19/dfs-bfs%E5%92%8C%E5%BF%AB%E6%8E%92/">
+                        <span class="hidden-mobile">dfs bfs和快排</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

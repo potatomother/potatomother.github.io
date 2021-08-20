@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>手写深拷贝</title>
+    <link href="/2021/08/20/%E6%89%8B%E5%86%99%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+    <url>/2021/08/20/%E6%89%8B%E5%86%99%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
+    
+    <content type="html"><![CDATA[<h1 id="手写深拷贝"><a href="#手写深拷贝" class="headerlink" title="手写深拷贝"></a>手写深拷贝</h1><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">function</span> deep<span class="hljs-constructor">Copy(<span class="hljs-params">p</span>,<span class="hljs-params">c</span>)</span>&#123;<br>    var c=c <span class="hljs-pattern-match"><span class="hljs-operator">||</span>&#123;&#125; ;</span><br><span class="hljs-pattern-match">    <span class="hljs-keyword">for</span>(var i <span class="hljs-keyword">in</span> p)&#123;</span><br><span class="hljs-pattern-match"><span class="hljs-keyword">if</span>(typeof p[i] <span class="hljs-operator">==</span>= &#x27;<span class="hljs-keyword">object</span>&#x27;)&#123;</span><br><span class="hljs-pattern-match">c[i]=(typeof p[i].constructor <span class="hljs-operator">==</span>= <span class="hljs-constructor">Array</span>)?[]:&#123;&#125;</span><br><span class="hljs-pattern-match">deep<span class="hljs-constructor">Copy(<span class="hljs-params">p</span>[<span class="hljs-params">i</span>],<span class="hljs-params">c</span>[<span class="hljs-params">i</span>])</span></span><br><span class="hljs-pattern-match">&#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="hljs-pattern-match">c[i]=p[i]</span><br><span class="hljs-pattern-match">&#125;</span><br><span class="hljs-pattern-match">    &#125;</span><br><span class="hljs-pattern-match">return c</span><br><span class="hljs-pattern-match">&#125;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>dfs bfs和快排</title>
     <link href="/2021/08/19/dfs-bfs%E5%92%8C%E5%BF%AB%E6%8E%92/"/>
     <url>/2021/08/19/dfs-bfs%E5%92%8C%E5%BF%AB%E6%8E%92/</url>
